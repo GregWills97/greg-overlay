@@ -3,16 +3,17 @@
 
 EAPI=7
 
-DESCRIPTION="Greg's custom configuration of Suckless's tiling window manager, DWM"
-HOMEPAGE="https://github.com/GregWills97/${PN}"
-SRC_URI="https://github.com/GregWills97/${PN}/archive/refs/tags/${PV}.tar.gz"
+inherit git-r3
 
+DESCRIPTION="Greg's custom fork of Suckless's tiling window manager, DWM"
+HOMEPAGE="https://github.com/GregWills97/${PN}"
+EGIT_REPO_URI="https://github.com/GregWills97/dwm-greg.git"
+
+KEYWORDS="~amd64"
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="amd64"
 
 RDEPEND="x11-misc/dmenu-greg x11-terms/st-luke"
-DEPEND="${RDEPEND}"
 
 src_compile() {
 	emake || die "emake compile failed"

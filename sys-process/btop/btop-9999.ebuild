@@ -3,13 +3,15 @@
 
 EAPI=7
 
+inherit git-r3
+
 DESCRIPTION="Linux/OSX/FreeBSD resource monitor"
 HOMEPAGE="https://github.com/aristocratos/btop"
-SRC_URI="https://github.com/aristocratos/${PN}/archive/refs/tags/v${PV}.tar.gz"
+EGIT_REPO_URI="https://github.com/aristocratos/btop.git"
 
+KEYWORDS="~amd64"
 LICENSE="Apache-2.0"
 SLOT="0"
-KEYWORDS="amd64"
 
 src_compile() {
 	emake || die "emake compile failed"
