@@ -9,7 +9,7 @@ DESCRIPTION="Luke Smith's configuration of the simple terminal."
 HOMEPAGE="https://github.com/LukeSmithxyz/st"
 EGIT_REPO_URI="https://github.com/LukeSmithxyz/st.git"
 
-KEY_WORDS="~amd64"
+KEYWORDS="~amd64"
 LICENSE="MIT"
 SLOT="0"
 

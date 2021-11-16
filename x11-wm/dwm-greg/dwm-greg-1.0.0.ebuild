@@ -11,7 +11,7 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64"
 
-RDEPEND="x11-misc/dmenu-greg"
+RDEPEND="x11-misc/dmenu-greg x11-terms/st-luke"
 DEPEND="${RDEPEND}"
 
 src_compile() {
