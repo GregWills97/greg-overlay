@@ -11,10 +11,13 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64"
 
+RDEPEND="!!x11-misc/dmenu"
+DEPEND="${RDEPEND}"
+
 src_compile() {
 	emake || die "emake compile failed"
 }
 
 src_install() {
-	emake DESTDIR="${D}" install
+	emake DESTDIR="${D}" PREFIX="${EPREFIX}/usr" install
 }

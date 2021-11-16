@@ -22,5 +22,5 @@ src_install() {
 	dodir /etc/dwm-greg
 	exeinto /etc/dwm-greg
 	doexe scripts/{autostart,dmenu_run}
-	emake DESTDIR="${D}" install
+	emake DESTDIR="${D}" PREFIX="${EPREFIX}/usr" install
 }
