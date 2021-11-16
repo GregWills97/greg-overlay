@@ -11,6 +11,12 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64"
 
+DEPENDS="x11-misc/dmenu-greg"
+
+src_configure() {
+	econf --with-popt
+}
+
 src_compile() {
 	emake || die "emake compile failed"
 }
