@@ -5,5 +5,5 @@
     <email>gregwills85@gmail.com</email>
     <name>Gregory Williams</name>
   </maintainer>
-  <longdescription>System Monitor made in C++</longdescription>
+  <longdescription>My configuaration of Suckless' dwm with included scripts.</longdescription>
 </pkgmetadata>
