@@ -13,6 +13,13 @@ KEYWORDS=""
 LICENSE="Apache-2.0"
 SLOT="0"
 
+RDEPEND="
+	sys-apps/coreutils
+	sys-apps/sed
+	sys-devel/gcc
+"
+
+
 src_compile() {
 	emake || die "emake compile failed"
 }
