@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit git-r3
+inherit git-r3 savedconfig
 
 DESCRIPTION="Greg's custom fork of Suckless's tiling window manager, DWM"
 HOMEPAGE="https://github.com/GregWills97/${PN}"
@@ -15,13 +15,22 @@ SLOT="0"
 
 RDEPEND="x11-misc/dmenu-greg x11-terms/st-luke"
 
+src_prepare() {
+	default
+	restore_config config.h
+}
+
 src_compile() {
 	emake || die "emake compile failed"
 }
 
 src_install() {
+	emake DESTDIR="${D}" PREFIX="${EPREFIX}/usr" install
+
+	#install scripts
 	dodir /etc/dwm-greg
 	exeinto /etc/dwm-greg
 	doexe scripts/{autostart,dmenu_run}
-	emake DESTDIR="${D}" PREFIX="${EPREFIX}/usr" install
+
+	save_config config.h
 }
