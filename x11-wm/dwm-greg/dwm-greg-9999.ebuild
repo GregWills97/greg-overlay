@@ -9,7 +9,7 @@ DESCRIPTION="Greg's custom fork of Suckless's tiling window manager, DWM"
 HOMEPAGE="https://github.com/GregWills97/${PN}"
 EGIT_REPO_URI="https://github.com/GregWills97/dwm-greg.git"
 
-KEYWORDS="~amd64"
+KEYWORDS=""
 LICENSE="MIT"
 SLOT="0"
 

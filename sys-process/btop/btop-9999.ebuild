@@ -9,7 +9,7 @@ DESCRIPTION="Linux/OSX/FreeBSD resource monitor"
 HOMEPAGE="https://github.com/aristocratos/btop"
 EGIT_REPO_URI="https://github.com/aristocratos/btop.git"
 
-KEYWORDS="~amd64"
+KEYWORDS=""
 LICENSE="Apache-2.0"
 SLOT="0"
 
