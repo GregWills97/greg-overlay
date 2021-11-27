@@ -16,10 +16,10 @@ IUSE="xinerama"
 
 RDEPEND="
         media-libs/fontconfig
-		x11-libs/libX11
-		x11-libs/libXft
+        x11-libs/libX11
+        x11-libs/libXft
         x11-misc/dmenu-greg
-		x11-terms/st-luke
+        x11-terms/st-luke
 "
 DEPEND="
        ${RDEPEND}
