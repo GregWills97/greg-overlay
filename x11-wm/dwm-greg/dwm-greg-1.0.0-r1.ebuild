@@ -5,7 +5,7 @@ EAPI=7
 
 inherit savedconfig
 
-DESCRIPTION="Greg's custom configuration of Suckless's tiling window manager, DWM"
+DESCRIPTION="Greg's custom fork of Suckless's tiling window manager, DWM"
 HOMEPAGE="https://github.com/GregWills97/${PN}"
 SRC_URI="https://github.com/GregWills97/${PN}/archive/refs/tags/${PV}.tar.gz"
 
