@@ -22,8 +22,8 @@ RDEPEND="
         x11-terms/st-luke
 "
 DEPEND="
-       ${RDEPEND}
-	   xinerama? ( x11-base/xorg-proto )
+        ${RDEPEND}
+        xinerama? ( x11-base/xorg-proto )
 "
 
 src_prepare() {
