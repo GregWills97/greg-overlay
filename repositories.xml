@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE repositories SYSTEM "/dtd/repositories.dtd">
+<repositories xmlns="" version="1.0">
+  <repo quality="experimental" status="unofficial">
+    <name><![CDATA[greg-overlay]]></name>
+    <description lang="en"><![CDATA[Gregory Williams Overlay]]></description>
+    <homepage>https://github.com/GregWills97/greg-overlay</homepage>
+    <owner type="person">
+      <email>gregwills85@gmail.com</email>
+      <name><![CDATA[Gregory Williams]]></name>
+    </owner>
+    <source type="git">git://github.com/GregWills97/greg-overlay.git</source>
+  </repo>
+</repositories>

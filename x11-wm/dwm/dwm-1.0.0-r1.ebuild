@@ -3,22 +3,22 @@
 
 EAPI=7
 
-inherit git-r3 savedconfig
+inherit savedconfig
 
 DESCRIPTION="Greg's custom fork of Suckless's tiling window manager, DWM"
-HOMEPAGE="https://github.com/GregWills97/${PN}"
-EGIT_REPO_URI="https://github.com/GregWills97/dwm-greg.git"
+HOMEPAGE="https://github.com/GregWills97/${PN}-greg"
+SRC_URI="https://github.com/GregWills97/${PN}-greg/archive/refs/tags/${PV}.tar.gz"
 
-KEYWORDS=""
 LICENSE="MIT"
 SLOT="0"
+KEYWORDS="~amd64"
 IUSE="xinerama"
 
 RDEPEND="
         media-libs/fontconfig
         x11-libs/libX11
         x11-libs/libXft
-        x11-misc/dmenu-greg
+        x11-misc/dmenu
         x11-terms/st-luke
 "
 DEPEND="

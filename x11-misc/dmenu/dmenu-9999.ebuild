@@ -6,16 +6,15 @@ EAPI=7
 inherit git-r3
 
 DESCRIPTION="Greg's custom fork of Suckless's tiling window manager, DWM"
-HOMEPAGE="https://github.com/GregWills97/${PN}"
-EGIT_REPO_URI="https://github.com/GregWills97/dmenu-greg.git"
+HOMEPAGE="https://github.com/GregWills97/${PN}-greg"
+EGIT_REPO_URI="https://github.com/GregWills97/${PN}-greg.git"
 
 KEYWORDS=""
 LICENSE="MIT"
 SLOT="0"
 IUSE="xinerama"
 
-RDEPEND="!!x11-misc/dmenu
-         media-libs/fontconfig
+RDEPEND="media-libs/fontconfig
          x11-libs/libX11
          x11-libs/libXft
          xinerama? ( x11-libs/libXinerama )
