@@ -30,6 +30,7 @@ Then install the repository with:
 	layman -o https://raw.github.com/GregWills97/greg-overlay/main/repositories.xml -f -a greg-overlay
 
 ## Configuration
-To use packages from my overlay that are contained in the official repo, add the package atom to a file in `/etc/portage/package.mask`. For example to use my version of dmenu, in file named `/etc/portage/package.mask/greg-overlay` add the dmenu atom name from the official repo:
+To use packages from my overlay that are contained in the official repo, add the package atom to a file in `/etc/portage/package.mask`. For example:
 
-	x11-wm/dmenu::gentoo
+	echo "x11-misc/dmenu::gentoo" >> /etc/portage/package.mask/greg-overlay
+	echo "x11-wm/dwm::gentoo" >> /etc/portage/package.mask/greg-overlay
