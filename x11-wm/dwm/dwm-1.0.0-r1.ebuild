@@ -6,8 +6,8 @@ EAPI=7
 inherit savedconfig
 
 DESCRIPTION="Greg's custom fork of Suckless's tiling window manager, DWM"
-HOMEPAGE="https://github.com/GregWills97/${PN}-greg"
-SRC_URI="https://github.com/GregWills97/${PN}-greg/archive/refs/tags/${PV}.tar.gz"
+HOMEPAGE="https://github.com/GregWills97/${PN}"
+SRC_URI="https://github.com/GregWills97/${PN}/archive/refs/tags/${PV}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
@@ -45,7 +45,7 @@ src_install() {
 
 	#Added Xsession desktop file
 	insinto /usr/share/xsessions
-	doins "${FILESDIR}"/dwm-greg.desktop
+	doins "${FILESDIR}"/dwm.desktop
 
 	#Save user config
 	save_config config.h

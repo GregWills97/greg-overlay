@@ -6,8 +6,8 @@ EAPI=7
 inherit git-r3
 
 DESCRIPTION="Greg's custom fork of Suckless's tiling window manager, DWM"
-HOMEPAGE="https://github.com/GregWills97/${PN}-greg"
-EGIT_REPO_URI="https://github.com/GregWills97/${PN}-greg.git"
+HOMEPAGE="https://github.com/GregWills97/${PN}"
+EGIT_REPO_URI="https://github.com/GregWills97/${PN}.git"
 
 KEYWORDS=""
 LICENSE="MIT"

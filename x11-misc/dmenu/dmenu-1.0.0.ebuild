@@ -4,8 +4,8 @@
 EAPI=7
 
 DESCRIPTION="Greg's fork of Suckless's application launcher, dmenu"
-HOMEPAGE="https://github.com/GregWills97/${PN}-greg"
-SRC_URI="https://github.com/GregWills97/${PN}-greg/archive/${PV}.tar.gz -> ${P}.tar.gz"
+HOMEPAGE="https://github.com/GregWills97/${PN}"
+SRC_URI="https://github.com/GregWills97/${PN}/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"

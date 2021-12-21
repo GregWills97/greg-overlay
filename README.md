@@ -18,7 +18,7 @@ If you haven't install this tool with:
 
 Then to add this overlay run:
 
-	eselect-repository add greg-overlay git https://github.com/GregWills97/greg-overlay.git
+	eselect repository add greg-overlay git https://github.com/GregWills97/greg-overlay.git
 
 ### Layman
 First if you haven't, install layman using:
