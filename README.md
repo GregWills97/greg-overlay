@@ -1,9 +1,9 @@
 # Gregory Williams Gentoo Overlay
-This is my Gentoo overlay with ebuilds that either are not in the official repository, or some of my own software I maintain.
+This is my Gentoo overlay with ebuilds that either are not in the official repository, or some of my own software that I maintain.
 
 ## Installation
 ### Using Portage
-Create a file under `/etc/portage/repos.conf/greg-overlay.conf` with this text:
+Create a file named `/etc/portage/repos.conf/greg-overlay.conf` with this text:
 
 	[greg-overlay]
 	auto-sync = yes
@@ -12,7 +12,7 @@ Create a file under `/etc/portage/repos.conf/greg-overlay.conf` with this text:
 	sync-uri = https://github.com/GregWills97/greg-overlay.git
 
 ### Eselect Repository
-If you haven't install this tool with:
+If you haven't install the eselect repository tool, install with this:
 
 	emerge -av app-eselect/eselect-repository
 
