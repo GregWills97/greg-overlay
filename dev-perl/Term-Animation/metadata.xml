@@ -5,6 +5,6 @@
     <email>gregwills85@gmail.com</email>
     <name>Gregory Williams</name>
   </maintainer>
-  <longdescription>.This module provides a framework to produce sprite animations using
+  <longdescription>This module provides a framework to produce sprite animations using
 ASCII art.</longdescription>
 </pkgmetadata>
