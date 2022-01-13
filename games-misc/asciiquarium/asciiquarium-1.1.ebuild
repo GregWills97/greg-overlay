@@ -16,10 +16,9 @@ KEYWORDS="~amd64"
 IUSE=""
 
 RDEPEND="dev-lang/perl
-	     dev-perl/Curses"
+	     dev-perl/Term-Animation[ncurses]"
 
 BDEPEND="${RDEPEND}"
-
 
 #Change source to reflect correct program name/version
 S=${WORKDIR}/${MY_P}
