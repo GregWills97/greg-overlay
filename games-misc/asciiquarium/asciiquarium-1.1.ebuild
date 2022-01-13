@@ -16,7 +16,7 @@ KEYWORDS="~amd64"
 IUSE=""
 
 RDEPEND="dev-lang/perl
-	     dev-perl/Term-Animation[ncurses]"
+         dev-perl/Term-Animation[ncurses]"
 
 BDEPEND="${RDEPEND}"
 
