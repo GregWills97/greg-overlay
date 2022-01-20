@@ -1,4 +1,4 @@
-# Copyright 2020-2021 Gentoo Authors
+# Copyright 2020-2022 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -19,10 +19,6 @@ RDEPEND="media-libs/fontconfig
 "
 DEPEND="${RDEPEND} x11-base/xorg-proto"
 BDEPEND="virtual/pkgconfig"
-
-src_compile() {
-	emake || die "emake compile failed"
-}
 
 src_install() {
 	emake DESTDIR="${D}" PREFIX="${EPREFIX}/usr" install
