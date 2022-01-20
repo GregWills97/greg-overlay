@@ -7,8 +7,8 @@ DESCRIPTION="Greg's fork of Suckless's application launcher, dmenu"
 HOMEPAGE="https://github.com/GregWills97/${PN}"
 
 if [[ ${PV} == "9999" ]] ; then
-	EGIT_REPO_URI="https://github.com/GregWills97/${PN}.git"
 	inherit git-r3
+	EGIT_REPO_URI="https://github.com/GregWills97/${PN}.git"
 else
 	SRC_URI="https://github.com/GregWills97/${PN}/archive/${PV}.tar.gz -> ${P}.tar.gz"
 	KEYWORDS="~amd64"
