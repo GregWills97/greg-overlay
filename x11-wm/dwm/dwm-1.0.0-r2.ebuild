@@ -7,11 +7,17 @@ inherit savedconfig
 
 DESCRIPTION="Greg's custom fork of Suckless's tiling window manager, DWM"
 HOMEPAGE="https://github.com/GregWills97/${PN}"
-SRC_URI="https://github.com/GregWills97/${PN}/archive/refs/tags/${PV}.tar.gz"
+
+if [[ ${PV} == "9999" ]] ; then
+	inherit git-r3
+	EGIT_REPO_URI="https://github.com/GregWills97/${PN}.git"
+else
+	SRC_URI="https://github.com/GregWills97/${PN}/archive/refs/tags/${PV}.tar.gz"
+	KEYWORDS="~amd64"
+fi
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
 IUSE="xinerama"
 
 RDEPEND="

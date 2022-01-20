@@ -3,13 +3,19 @@
 
 EAPI=7
 
-inherit git-r3 savedconfig
+inherit savedconfig
 
 DESCRIPTION="Greg's custom fork of Suckless's tiling window manager, DWM"
 HOMEPAGE="https://github.com/GregWills97/${PN}"
-EGIT_REPO_URI="https://github.com/GregWills97/${PN}.git"
 
-KEYWORDS=""
+if [[ ${PV} == "9999" ]] ; then
+	inherit git-r3
+	EGIT_REPO_URI="https://github.com/GregWills97/${PN}.git"
+else
+	SRC_URI="https://github.com/GregWills97/${PN}/archive/refs/tags/${PV}.tar.gz"
+	KEYWORDS="~amd64"
+fi
+
 LICENSE="MIT"
 SLOT="0"
 IUSE="xinerama"
