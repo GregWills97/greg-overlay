@@ -12,25 +12,25 @@ Create a file named `/etc/portage/repos.conf/greg-overlay.conf` with this text:
 	sync-uri = https://github.com/GregWills97/greg-overlay.git
 
 ### Eselect Repository
-If you haven't install the eselect repository tool, install with this:
+If you haven't installed the eselect repository tool, emerge it with this command:
 
-	emerge -av app-eselect/eselect-repository
+	root # emerge -av app-eselect/eselect-repository
 
 Then to add this overlay run:
 
-	eselect repository add greg-overlay git https://github.com/GregWills97/greg-overlay.git
+	root # eselect repository add greg-overlay git https://github.com/GregWills97/greg-overlay.git
 
 ### Layman
-First if you haven't, install layman using:
+First if you haven't, install layman with this command:
 
-	USE="git sync-plugin-portage" emerge -av layman
+	root # USE="git sync-plugin-portage" emerge -av layman
 
 Then install the repository with:
 
-	layman -o https://raw.github.com/GregWills97/greg-overlay/main/repositories.xml -f -a greg-overlay
+	root # layman -o https://raw.github.com/GregWills97/greg-overlay/main/repositories.xml -f -a greg-overlay
 
 ## Configuration
 To use packages from my overlay that are contained in the official repo, add the package atom to a file in `/etc/portage/package.mask`. For example:
 
-	echo "x11-misc/dmenu::gentoo" >> /etc/portage/package.mask/greg-overlay
-	echo "x11-wm/dwm::gentoo" >> /etc/portage/package.mask/greg-overlay
+	root # echo "x11-misc/dmenu::gentoo" >> /etc/portage/package.mask/greg-overlay
+	root # echo "x11-wm/dwm::gentoo" >> /etc/portage/package.mask/greg-overlay
