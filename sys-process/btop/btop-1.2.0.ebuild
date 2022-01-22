@@ -36,5 +36,5 @@ src_compile() {
 
 src_install() {
 	emake DESTDIR="${D}" PREFIX="${EPREFIX}/usr" install
-    dodoc README.md CHANGELOG.md
+	dodoc README.md CHANGELOG.md
 }
