@@ -17,12 +17,24 @@ fi
 LICENSE="Apache-2.0"
 SLOT="0"
 
-RDEPEND="
-	sys-apps/coreutils
-	sys-apps/sed
-	sys-devel/gcc
+DEPEND=""
+RDEPEND="${DEPEND}"
+BDEPEND="
+	>=sys-devel/gcc-10
 "
+
+src_prepare() {
+	default
+	# btop installs README.md to /usr/share/btop by default
+	sed -i 's^.*cp -p README.md. *$//' Makefile
+}
+
+src_compile() {
+	#Disable btop optimization flags
+	emake OPTFLAGS=""
+}
 
 src_install() {
 	emake DESTDIR="${D}" PREFIX="${EPREFIX}/usr" install
+    dodoc README.md CHANGELOG.md
 }
