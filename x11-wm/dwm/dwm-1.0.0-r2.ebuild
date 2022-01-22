@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit savedconfig
+inherit savedconfig toolchain-funcs
 
 DESCRIPTION="Greg's custom fork of Suckless's tiling window manager, DWM"
 HOMEPAGE="https://github.com/GregWills97/${PN}"
@@ -34,7 +34,25 @@ DEPEND="
 
 src_prepare() {
 	default
+	# We need to remove optimization, change = to += for flags
+	# and set appropriate lib and include path
+	sed -i \
+		-e "s/ -Os / /" \
+		-e "/^\(LDFLAGS\|CFLAGS\|CPPFLAGS\)/{s| = | += |g;s|-s ||g}" \
+		-e "/^X11LIB/{s:/usr/X11R6/lib:/usr/$(get_libdir)/X11:}" \
+		-e '/^X11INC/{s:/usr/X11R6/include:/usr/include/X11:}' \
+		config.mk || die
+
 	restore_config config.h
+}
+
+src_compile() {
+	#Set CC variable, disable xinerama if needed
+	if use xinerama; then
+		emake CC=$(tc-getCC) dwm
+	else
+		emake CC=$(tc-getCC) XINERAMAFLAGS="" XINERAMALIBS="" dwm
+	fi
 }
 
 src_install() {
@@ -48,6 +66,9 @@ src_install() {
 	#Added Xsession desktop file
 	insinto /usr/share/xsessions
 	doins "${FILESDIR}"/dwm.desktop
+
+	#Install documentaton
+	dodoc README
 
 	#Save user config
 	save_config config.h
