@@ -33,8 +33,8 @@ src_prepare() {
 
 	# Set appropriate lib/include paths
 	sed -i \
-        -e "/^X11LIB/{s:/usr/X11R6/lib:/usr/$(get_libdir)/X11:}" \
-        -e '/^X11INC/{s:/usr/X11R6/include:/usr/include/X11:}' \
+		-e "/^X11LIB/{s:/usr/X11R6/lib:/usr/$(get_libdir)/X11:}" \
+		-e '/^X11INC/{s:/usr/X11R6/include:/usr/include/X11:}' \
 		config.mk || die
 
 	# Remove terminfo from Makefile install
