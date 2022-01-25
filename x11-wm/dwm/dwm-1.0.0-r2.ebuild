@@ -25,7 +25,7 @@ RDEPEND="
         x11-libs/libX11
         x11-libs/libXft
         x11-misc/dmenu
-        x11-terms/st-luke
+        x11-terms/st
 "
 DEPEND="
         ${RDEPEND}
