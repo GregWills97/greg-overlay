@@ -35,8 +35,6 @@ src_prepare() {
     sed -i \
         -e "s/ -Os / /" \
         -e "/^\(LDFLAGS\|CFLAGS\|CPPFLAGS\)/{s| = | += |g;s|-s ||g}" \
-        -e '/^INCS/{s:-I$(X11INC) -I$(FREETYPEINC):$(X11INC) $(FREETYPEINC):}' \
-        -e '/^LIBS/{s:-L$(X11LIB) -lX11 $(XINERAMALIBS) $(FREETYPELIBS):$(X11LIB) $(XINERAMALIBS) $(FREETYPELIBS):}' \
 		-e "/^X11LIB/{s:/usr/X11R6/lib:/usr/$(get_libdir)/X11:}" \
         -e '/^X11INC/{s:/usr/X11R6/include:/usr/include/X11:}' \
         config.mk || die
@@ -49,20 +47,11 @@ src_prepare() {
 
 src_compile() {
 	#Set CC variable, disable xinerama if needed
-	emake CC=$(tc-getCC) \
-		"FREETYPEINC=$( $(tc-getPKG_CONFIG) --cflags x11 fontconfig xft 2>/dev/null )" \
-		"FREETYPELIBS=$( $(tc-getPKG_CONFIG) --libs x11 fontconfig xft 2>/dev/null )" \
-		"X11INC=$( $(tc-getPKG_CONFIG) --cflags x11 2>/dev/null )" \
-		"X11LIB=$( $(tc-getPKG_CONFIG) --libs x11 2>/dev/null )" \
-
-		"XINERAMAFLAGS=$(
-			usex xinerama "-DXINERAMA $(
-				$(tc-getPKG_CONFIG) --cflags xinerama 2>/dev/null
-			)" ''
-		)" \
-		"XINERAMALIBS=$(
-			usex xinerama "$( $(tc-getPKG_CONFIG) --libs xinerama 2>/dev/null)" ''
-		)"
+	if use xinerama; then
+		emake CC=$(tc-getCC) dmenu
+	else
+		emake CC=$(tc-getCC) XINERAMAFLAGS="" XINERAMALIBS="" dmenu
+	fi
 }
 
 src_install() {
