@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit toolchain-funcs
+inherit savedconfig toolchain-funcs
 
 DESCRIPTION="Greg's fork of the simple terminal."
 HOMEPAGE="https://github.com/GregWills97/st"
@@ -47,6 +47,8 @@ src_prepare() {
 	sed -i \
 		-e '/tic/d' \
 		Makefile || die
+
+	restore_config config.h
 }
 
 src_configure() {
@@ -75,4 +77,6 @@ src_install() {
 		TERMINFO_DIRS="/usr/share/${PN}/terminfo"
 		COLON_SEPARATED="TERMINFO_DIRS"
 	_EOF_
+
+	save_config config.h
 }
