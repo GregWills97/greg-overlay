@@ -26,7 +26,6 @@ RDEPEND="media-libs/fontconfig
          xinerama? ( x11-libs/libXinerama )
 "
 DEPEND="${RDEPEND} x11-base/xorg-proto"
-BDEPEND="virtual/pkgconfig"
 
 src_prepare() {
 	default
