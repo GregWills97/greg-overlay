@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit toolchain-funcs
+inherit savedconfig toolchain-funcs
 
 DESCRIPTION="Greg's fork of Suckless's application launcher, dmenu"
 HOMEPAGE="https://github.com/GregWills97/${PN}"
@@ -42,6 +42,8 @@ src_prepare() {
 		-e 's|^	@|	|g' \
 		-e '/^	echo/d' \
 		Makefile || die
+
+	restore_config config.h
 }
 
 src_compile() {
@@ -55,4 +57,6 @@ src_compile() {
 
 src_install() {
 	emake DESTDIR="${D}" PREFIX="${EPREFIX}/usr" install
+
+	save_config config.h
 }
