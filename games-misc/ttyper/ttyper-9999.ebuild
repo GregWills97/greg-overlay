@@ -106,5 +106,5 @@ src_unpack() {
 src_install() {
 	cargo_src_install
 
-    dodoc README.md
+	dodoc README.md
 }
