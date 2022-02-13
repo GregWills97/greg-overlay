@@ -13,12 +13,10 @@ EGIT_REPO_URI="https://gitlab.com/dwt1/${MY_PN}.git"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64"
 IUSE=""
 
 src_install() {
 	insinto /usr/share/backgrounds/${PN}/
-
 	doins *.jpg
 
 	dodoc README.md
