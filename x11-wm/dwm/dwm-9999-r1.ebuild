@@ -61,7 +61,7 @@ src_install() {
 	#install scripts
 	dodir /etc/dwm-greg
 	exeinto /etc/dwm-greg
-	doexe scripts/{autostart,dmenu_run}
+	doexe scripts/{autostart,dmenu_run,session-manager}
 
 	#Added Xsession desktop file
 	insinto /usr/share/xsessions
