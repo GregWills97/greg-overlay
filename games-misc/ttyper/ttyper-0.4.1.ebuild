@@ -86,7 +86,7 @@ if [[ ${PV} == "9999" ]] ; then
 else
 	SRC_URI="https://github.com/max-niederman/ttyper/archive/v${PV}.tar.gz -> ${P}.tar.gz
 	        $(cargo_crate_uris)"
-	KEYWORDS="~amd64"
+	KEYWORDS="amd64"
 fi
 
 
