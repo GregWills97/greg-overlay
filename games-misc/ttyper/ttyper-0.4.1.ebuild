@@ -89,7 +89,6 @@ else
 	KEYWORDS="amd64"
 fi
 
-
 LICENSE="Apache-2.0 Apache-2.0-with-LLVM-exceptions BSD MIT Unlicense"
 SLOT="0"
 IUSE=""
