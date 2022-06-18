@@ -10,7 +10,7 @@ inherit perl-module
 DESCRIPTION="Animated ASCII Art support for Perl"
 
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="amd64"
 IUSE="ncurses"
 
 RDEPEND="ncurses? ( dev-perl/Curses )"
