@@ -36,7 +36,7 @@ DESCRIPTION="Terminal file manager"
 HOMEPAGE="https://github.com/gokcehan/lf"
 IUSE="+static X"
 
-KEYWORDS="~amd64"
+KEYWORDS="amd64"
 LICENSE="MIT"
 SLOT="0"
 
