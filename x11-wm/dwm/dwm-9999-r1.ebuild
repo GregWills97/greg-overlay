@@ -13,7 +13,7 @@ if [[ ${PV} == "9999" ]] ; then
 	EGIT_REPO_URI="https://github.com/GregWills97/${PN}.git"
 else
 	SRC_URI="https://github.com/GregWills97/${PN}/archive/refs/tags/${PV}.tar.gz"
-	KEYWORDS="~amd64"
+	KEYWORDS="amd64"
 fi
 
 LICENSE="MIT"
@@ -22,11 +22,8 @@ IUSE="xinerama"
 
 RDEPEND="
         media-libs/fontconfig
-        sys-auth/elogind
         x11-libs/libX11
         x11-libs/libXft
-        x11-misc/dmenu
-        x11-terms/st
 "
 DEPEND="
         ${RDEPEND}
@@ -60,9 +57,9 @@ src_install() {
 	emake DESTDIR="${D}" PREFIX="${EPREFIX}/usr" install
 
 	#install scripts
-	dodir /etc/dwm-greg
-	exeinto /etc/dwm-greg
-	doexe scripts/{autostart,dmenu_run,session-manager}
+	dodir /etc/gde
+	exeinto /etc/gde
+	doexe scripts/*
 
 	#Added Xsession desktop file
 	insinto /usr/share/xsessions

@@ -57,9 +57,9 @@ src_install() {
 	emake DESTDIR="${D}" PREFIX="${EPREFIX}/usr" install
 
 	#install scripts
-	dodir /etc/dwm-greg
-	exeinto /etc/dwm-greg
-	doexe scripts/{autostart,dmenu_run,session-manager}
+	dodir /etc/gde
+	exeinto /etc/gde
+	doexe scripts/*
 
 	#Added Xsession desktop file
 	insinto /usr/share/xsessions
