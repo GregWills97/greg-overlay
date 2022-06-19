@@ -50,15 +50,15 @@ RDEPEND="
 	x11-apps/xkill
 	x11-apps/xsetroot
 	x11-base/xorg-server
-	x11-misc/dmenu
+	=x11-misc/dmenu-${PV}
 	x11-misc/dunst
 	x11-misc/nitrogen
 	x11-misc/pcmanfm
 	x11-misc/picom
 	x11-misc/sddm
-	x11-terms/st
+	=x11-terms/st-${PV}
 	x11-themes/dt-wallpapers
-	x11-wm/dwm
+	=x11-wm/dwm-${PV}
 	bluetooth? (
 		net-wireless/bluez
 		net-wireles/blueman
