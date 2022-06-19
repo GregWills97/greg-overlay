@@ -38,6 +38,7 @@ RDEPEND="
 	media-gfx/scrot
 	media-gfx/sxiv
 	media-gfx/ueberzug
+	media-sound/playerctl
 	sys-apps/exa
 	sys-apps/lm-sensors
 	sys-apps/pciutils
