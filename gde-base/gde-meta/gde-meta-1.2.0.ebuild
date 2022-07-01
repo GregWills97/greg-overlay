@@ -62,7 +62,7 @@ RDEPEND="
 	=x11-wm/dwm-${PV}
 	bluetooth? (
 		net-wireless/bluez
-		net-wireles/blueman
+		net-wireless/blueman
 	)
 	elogind? ( sys-auth/elogind )
 	pulseaudio? ( media-sound/pavucontrol )
