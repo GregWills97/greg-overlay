@@ -23,11 +23,13 @@ RDEPEND="
 	app-crypt/gnupg
 	app-editors/neovim
 	app-misc/lf
+	app-misc/neofetch
 	app-text/tree
 	app-text/zathura
 	app-text/zathura-meta
 	dev-util/geany
 	dev-vcs/git
+	gui-libs/display-manager-init
 	lxde-base/lxappearance
 	media-fonts/cantarell
 	media-fonts/corefonts
@@ -59,6 +61,7 @@ RDEPEND="
 	x11-misc/sddm
 	=x11-terms/st-${PV}
 	x11-themes/dt-wallpapers
+	x11-themes/dt-sddm-theme
 	=x11-wm/dwm-${PV}
 	bluetooth? (
 		net-wireless/bluez
