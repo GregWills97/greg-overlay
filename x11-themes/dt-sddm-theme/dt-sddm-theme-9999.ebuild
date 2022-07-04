@@ -24,5 +24,5 @@ src_install() {
 
 	dodir /usr/share/sddm/themes/multicolor-sddm-theme
 	insinto /usr/share/sddm/themes/multicolor-sddm-theme
-	doins $S/*
+	doins -r $S/*
 }
