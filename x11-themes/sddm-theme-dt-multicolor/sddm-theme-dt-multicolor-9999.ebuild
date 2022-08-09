@@ -13,15 +13,9 @@ LICENSE="GPL-3"
 SLOT="0"
 IUSE=""
 
+RDEPEND="x11-misc/sddm"
+
 src_install() {
-	# Conf Files
-	dodir /etc/sddm/scripts
-	exeinto /etc/sddm/scripts
-	doexe ${FILESDIR}/Xsetup
-
-	insinto /etc
-	doins ${FILESDIR}/sddm.conf
-
 	dodir /usr/share/sddm/themes/multicolor-sddm-theme
 	insinto /usr/share/sddm/themes/multicolor-sddm-theme
 	doins -r $S/*

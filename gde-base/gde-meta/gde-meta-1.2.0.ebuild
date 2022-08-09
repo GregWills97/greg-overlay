@@ -61,7 +61,8 @@ RDEPEND="
 	x11-misc/sddm
 	=x11-terms/st-${PV}
 	x11-themes/dt-wallpapers
-	x11-themes/dt-sddm-theme
+	x11-themes/sddm-theme-dt-multicolor
+	x11-themes/sddm-theme-sugar-candy
 	=x11-wm/dwm-${PV}
 	bluetooth? (
 		net-wireless/bluez
