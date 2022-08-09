@@ -14,7 +14,6 @@ SLOT="0"
 IUSE=""
 
 RDEPEND="x11-misc/sddm
-		 dev-qt/qtquickcontrols
 		 dev-qt/qtquickcontrols2
 		 dev-qt/qtgraphicaleffects
 		 dev-qt/qtsvg"
