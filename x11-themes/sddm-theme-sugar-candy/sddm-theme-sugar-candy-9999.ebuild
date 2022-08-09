@@ -13,7 +13,11 @@ LICENSE="GPL-3"
 SLOT="0"
 IUSE=""
 
-RDEPEND="x11-misc/sddm"
+RDEPEND="x11-misc/sddm
+		 dev-qt/qtquickcontrols
+		 dev-qt/qtgraphicaleffects
+		 dev-qt/qtsvg"
+
 S=${WORKDIR}/${MY_PN}
 
 src_install() {
