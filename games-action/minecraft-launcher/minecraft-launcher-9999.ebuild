@@ -10,7 +10,6 @@ HOMEPAGE="https://www.minecraft.net/"
 SRC_URI="https://launcher.mojang.com/download/Minecraft.tar.gz
 	     https://launcher.mojang.com/download/minecraft-launcher.svg"
 
-KEYWORDS="~amd64"
 LICENSE="Mojang"
 SLOT="0"
 
@@ -23,6 +22,6 @@ S="${WORKDIR}/${PN}"
 src_install() {
 	dobin ${PN}
 
-	newicon -s scalable "${DISTDIR}/${PN}.svg" "${PN}-legacy.svg"
+	newicon -s scalable "${DISTDIR}/${PN}.svg" "${PN}.svg"
 	make_desktop_entry ${PN} "Minecraft" ${PN} Game
 }
