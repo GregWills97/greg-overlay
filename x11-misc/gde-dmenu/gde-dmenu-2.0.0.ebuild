@@ -5,15 +5,18 @@ EAPI=7
 
 inherit savedconfig toolchain-funcs
 
+MY_PN=${PN/gde-/}
+MY_P=${MY_PN}-${PV}
+
 DESCRIPTION="Greg's fork of Suckless's application launcher, dmenu"
-HOMEPAGE="https://github.com/GregWills97/${PN}"
+HOMEPAGE="https://github.com/GregWills97/${MY_PN}"
 
 if [[ ${PV} == "9999" ]] ; then
 	inherit git-r3
-	EGIT_REPO_URI="https://github.com/GregWills97/${PN}.git"
+	EGIT_REPO_URI="https://github.com/GregWills97/${MY_PN}.git"
 else
-	SRC_URI="https://github.com/GregWills97/${PN}/archive/${PV}.tar.gz -> ${P}.tar.gz"
-	KEYWORDS="~amd64"
+	SRC_URI="https://github.com/GregWills97/${MY_PN}/archive/${PV}.tar.gz -> ${MY_P}.tar.gz"
+	KEYWORDS="amd64"
 fi
 
 LICENSE="MIT"
@@ -26,6 +29,8 @@ RDEPEND="media-libs/fontconfig
          xinerama? ( x11-libs/libXinerama )
 "
 DEPEND="${RDEPEND} x11-base/xorg-proto"
+
+S=${WORKDIR}/${MY_P}
 
 src_prepare() {
 	default
@@ -57,6 +62,10 @@ src_compile() {
 
 src_install() {
 	emake DESTDIR="${D}" PREFIX="${EPREFIX}/usr" install
+
+	#Install docs
+	dodoc README
+	doman ${MY_PN}.1 stest.1
 
 	save_config config.h
 }
