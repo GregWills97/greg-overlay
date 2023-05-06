@@ -5,17 +5,14 @@ EAPI=7
 
 inherit savedconfig toolchain-funcs
 
-MY_PN=${PN/gde-/}
-MY_P=${MY_PN}-${PV}
-
 DESCRIPTION="Greg's fork of the simple terminal."
 HOMEPAGE="https://github.com/GregWills97/st"
 
 if [[ ${PV} == "9999" ]] ; then
 	inherit git-r3
-	EGIT_REPO_URI="https://github.com/GregWills97/${MY_P}.git"
+	EGIT_REPO_URI="https://github.com/GregWills97/${P}.git"
 else
-	SRC_URI="https://github.com/GregWills97/${MY_PN}/archive/${PV}.tar.gz -> ${MY_P}.tar.gz"
+	SRC_URI="https://github.com/GregWills97/${PN}/archive/${PV}.tar.gz -> ${P}.tar.gz"
 	KEYWORDS="amd64"
 fi
 
@@ -35,7 +32,7 @@ DEPEND="
 "
 BDEPEND="virtual/pkgconfig"
 
-S=${WORKDIR}/${MY_P}
+S=${WORKDIR}/${P}
 
 src_prepare() {
 	default
@@ -74,7 +71,7 @@ src_install() {
 
 	#Install docs
 	dodoc README
-	doman ${MY_PN}.1
+	doman ${PN}.1
 
 	# Install terminfo
 	insinto /usr/share/${PN}

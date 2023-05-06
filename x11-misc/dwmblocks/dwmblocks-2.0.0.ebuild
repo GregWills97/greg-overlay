@@ -5,17 +5,14 @@ EAPI=7
 
 inherit savedconfig toolchain-funcs
 
-MY_PN=${PN/gde-/}
-MY_P=${MY_PN}-${PV}
-
 DESCRIPTION="Custom fork of dwmblocks, a status text setter program"
-HOMEPAGE="https://github.com/GregWills97/${MY_PN}"
+HOMEPAGE="https://github.com/GregWills97/${PN}"
 
 if [[ ${PV} == "9999" ]] ; then
 	inherit git-r3
-	EGIT_REPO_URI="https://github.com/GregWills97/${MY_PN}.git"
+	EGIT_REPO_URI="https://github.com/GregWills97/${PN}.git"
 else
-	SRC_URI="https://github.com/GregWills97/${MY_PN}/archive/${PV}.tar.gz -> ${MY_P}.tar.gz"
+	SRC_URI="https://github.com/GregWills97/${PN}/archive/${PV}.tar.gz -> ${P}.tar.gz"
 	KEYWORDS="amd64"
 fi
 
@@ -30,7 +27,7 @@ RDEPEND="
 "
 DEPEND="${RDEPEND}"
 
-S=${WORKDIR}/${MY_P}
+S=${WORKDIR}/${P}
 
 src_prepare() {
 	default
@@ -41,11 +38,6 @@ src_prepare() {
 		Makefile || die
 
 	restore_config blocks.h
-}
-
-src_compile() {
-	#Set CC variable
-	emake CC=$(tc-getCC) dwmblocks
 }
 
 src_install() {
