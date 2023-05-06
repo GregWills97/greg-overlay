@@ -14,6 +14,7 @@ IUSE="bluetooth elogind pulseaudio systemd"
 
 REQUIRED_USE="
 	^^ ( elogind systemd )
+	|| ( pulseaudio )
 "
 
 RDEPEND="
@@ -27,19 +28,17 @@ RDEPEND="
 	app-text/tree
 	app-text/zathura
 	app-text/zathura-meta
-	dev-util/geany
 	dev-vcs/git
 	gui-libs/display-manager-init
 	lxde-base/lxappearance
-	media-fonts/cantarell
 	media-fonts/corefonts
 	media-fonts/courier-prime
 	media-fonts/font-bitstream-100dpi
 	media-fonts/liberation-fonts
-	media-fonts/nerd-fonts[mononoki,noto,ubuntu,ubuntumono]
 	media-gfx/scrot
 	media-gfx/sxiv
 	media-gfx/ueberzug
+	media-sound/pavucontrol
 	media-sound/playerctl
 	sys-apps/exa
 	sys-apps/lm-sensors
@@ -49,25 +48,25 @@ RDEPEND="
 	www-client/brave-bin
 	x11-apps/mesa-progs
 	x11-apps/setxkbmap
-	x11-apps/xev
+	x11-apps/xbacklight
 	x11-apps/xkill
 	x11-apps/xsetroot
+	x11-base/xorg-drivers
 	x11-base/xorg-server
-	=x11-misc/dmenu-${PV}
+	>=x11-misc/gde-dmenu-${PV}
+	>=x11-misc/gde-dwmblocks-${PV}
 	x11-misc/dunst
 	x11-misc/nitrogen
 	x11-misc/pcmanfm
 	x11-misc/picom
 	x11-misc/sddm
-	=x11-terms/st-${PV}
+	>=x11-terms/gde-st-${PV}
 	x11-themes/dt-wallpapers
-	x11-themes/sddm-theme-dt-multicolor
 	x11-themes/sddm-theme-sugar-candy
-	=x11-wm/dwm-${PV}
+	>=x11-wm/gde-dwm-${PV}
 	bluetooth? (
 		net-wireless/bluez
 		net-wireless/blueman
 	)
 	elogind? ( sys-auth/elogind )
-	pulseaudio? ( media-sound/pavucontrol )
 "
