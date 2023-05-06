@@ -5,30 +5,41 @@ EAPI=7
 
 inherit savedconfig toolchain-funcs
 
+MY_PN=${PN/gde-/}
+MY_P=${MY_PN}-${PV}
+
 DESCRIPTION="Greg's custom fork of Suckless's tiling window manager, DWM"
-HOMEPAGE="https://github.com/GregWills97/${PN}"
+HOMEPAGE="https://github.com/GregWills97/${MY_PN}"
 
 if [[ ${PV} == "9999" ]] ; then
 	inherit git-r3
-	EGIT_REPO_URI="https://github.com/GregWills97/${PN}.git"
+	EGIT_REPO_URI="https://github.com/GregWills97/${MY_PN}.git"
 else
-	SRC_URI="https://github.com/GregWills97/${PN}/archive/${PV}.tar.gz -> ${P}.tar.gz"
+	SRC_URI="https://github.com/GregWills97/${MY_PN}/archive/${PV}.tar.gz -> ${MY_P}.tar.gz"
 	KEYWORDS="amd64"
 fi
+
 
 LICENSE="MIT"
 SLOT="0"
 IUSE="xinerama"
 
 RDEPEND="
+        media-fonts/fontawesome
+        media-fonts/joypixels
         media-libs/fontconfig
         x11-libs/libX11
+        x11-libs/libxcb
         x11-libs/libXft
+        x11-libs/libXpm
+        x11-libs/libXrender
 "
 DEPEND="
         ${RDEPEND}
         xinerama? ( x11-base/xorg-proto )
 "
+
+S=${WORKDIR}/${MY_P}
 
 src_prepare() {
 	default
@@ -56,17 +67,18 @@ src_compile() {
 src_install() {
 	emake DESTDIR="${D}" PREFIX="${EPREFIX}/usr" install
 
-	#install scripts
-	dodir /etc/gde
-	exeinto /etc/gde
-	doexe scripts/*
+	#install icons
+	dodir /usr/share/icons/gde
+	insinto /usr/share/icons/gde
+	doins icons/*
 
 	#Added Xsession desktop file
 	insinto /usr/share/xsessions
-	doins "${FILESDIR}"/dwm.desktop
+	doins "${FILESDIR}"/${PN}.desktop
 
 	#Install documentaton
-	dodoc README
+	dodoc README.md
+	doman ${MY_PN}.1
 
 	#Save user config
 	save_config config.h
