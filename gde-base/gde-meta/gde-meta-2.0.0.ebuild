@@ -35,6 +35,7 @@ RDEPEND="
 	media-fonts/courier-prime
 	media-fonts/font-bitstream-100dpi
 	media-fonts/liberation-fonts
+	media-fonts/nerd-fonts[mononoki,ubuntu]
 	media-gfx/scrot
 	media-gfx/sxiv
 	media-gfx/ueberzug
