@@ -29,6 +29,7 @@ RDEPEND="
 	app-text/zathura
 	app-text/zathura-meta
 	dev-vcs/git
+	gde-base/gde-scripts
 	gui-libs/display-manager-init
 	lxde-base/lxappearance
 	media-fonts/corefonts
