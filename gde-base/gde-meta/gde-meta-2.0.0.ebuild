@@ -42,7 +42,7 @@ RDEPEND="
 	media-gfx/ueberzug
 	media-sound/pavucontrol
 	media-sound/playerctl
-	sys-apps/exa
+	sys-apps/eza
 	sys-apps/lm-sensors
 	sys-apps/pciutils
 	sys-apps/usbutils
