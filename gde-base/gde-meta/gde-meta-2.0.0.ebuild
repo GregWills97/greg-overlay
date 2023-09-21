@@ -25,6 +25,7 @@ RDEPEND="
 	app-editors/neovim
 	app-misc/lf
 	app-misc/neofetch
+	app-portage/eix
 	app-text/tree
 	app-text/zathura
 	app-text/zathura-meta
