@@ -14,7 +14,8 @@ SLOT="0"
 IUSE=""
 
 RDEPEND="x11-misc/sddm
-		 dev-qt/qt5compat
+		 dev-qt/qt5compat[qml]
+		 dev-qt/qtgraphicaleffects
 		 dev-qt/qtquickcontrols2
 		 dev-qt/qtgraphicaleffects
 		 dev-qt/qtsvg"
