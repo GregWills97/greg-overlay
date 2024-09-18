@@ -3,9 +3,9 @@
 
 EAPI=7
 
-DESCRIPTION="Sugar Candy SDDM Theme"
-HOMEPAGE="https://www.opencode.net/marianarlt/sddm-sugar-candy"
-SRC_URI="https://www.opencode.net/marianarlt/sddm-sugar-candy/-/archive/master/sddm-sugar-candy-master.tar.gz"
+DESCRIPTION="Some nice eucalyptus-y eye-candy for SDDM!"
+HOMEPAGE="https://gitlab.com/Matt.Jolly/sddm-eucalyptus-drop/"
+SRC_URI="https://gitlab.com/Matt.Jolly/sddm-eucalyptus-drop/-/archive/master/sddm-eucalyptus-drop-master.tar.gz"
 
 MY_PN=${PN/-theme/}-master
 
