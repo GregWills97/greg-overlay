@@ -7,7 +7,7 @@ command_background=true
 pidfile=/run/amdgpu-fan.pid
 
 depend() {
-    need localmount
-    after bootmisc
+	need localmount
+	after bootmisc
 }
 

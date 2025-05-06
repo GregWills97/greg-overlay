@@ -15,14 +15,14 @@ KEYWORDS="~amd64"
 IUSE=""
 
 RDEPEND="
-    dev-python/pyyaml[${PYTHON_USEDEP}]
+	dev-python/pyyaml[${PYTHON_USEDEP}]
 	dev-python/numpy[${PYTHON_USEDEP}]
 "
 
 DEPEND="${RDEPEND}"
 
 src_install() {
-    distutils-r1_src_install
+	distutils-r1_src_install
 
 	newinitd "${FILESDIR}/amdgpu-fan.initd" ${PN}
 	systemd_dounit "${S}/amdgpu-fan.service"
