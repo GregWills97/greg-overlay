@@ -1,0 +1,13 @@
+#!/sbin/openrc-run
+
+description="AMDGPU fan controller daemon"
+
+command=/usr/bin/amdgpu-fan
+command_background=true
+pidfile=/run/amdgpu-fan.pid
+
+depend() {
+    need localmount
+    after bootmisc
+}
+
