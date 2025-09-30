@@ -49,7 +49,7 @@ RDEPEND="
 	sys-apps/usbutils
 	sys-power/acpilight
 	sys-process/btop
-	www-client/brave-bin
+	www-client/brave-browser
 	x11-apps/mesa-progs
 	x11-apps/setxkbmap
 	x11-apps/xkill
