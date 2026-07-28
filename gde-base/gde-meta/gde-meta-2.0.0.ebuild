@@ -19,7 +19,7 @@ REQUIRED_USE="
 
 RDEPEND="
 	app-admin/pass
-	app-arch/p7zip
+	app-arch/7zip
 	app-arch/xarchiver
 	app-crypt/gnupg
 	app-editors/neovim
